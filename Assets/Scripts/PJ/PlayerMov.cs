@@ -15,13 +15,25 @@ public class PlayerMov : MonoBehaviour
         rb2d = GetComponent<Rigidbody2D>();
     }
 
-    void Update()
+    private void FixedUpdate()
     {
-        transform.Translate(inputSpeed * Time.deltaTime * movementSpeed);
+        ApplyInput();
     }
 
     public void OnMove(InputValue Value)
     {
-        inputSpeed = Value.Get<Vector2>();
+        //inputSpeed = Value.Get<Vector2>() * movementSpeed;
+    }
+
+    public void ApplyInput()
+    {
+        float xInput = Input.GetAxis("Horizontal");
+        float yInput = Input.GetAxis("Vertical");
+
+        float xForce = xInput * movementSpeed * Time.deltaTime;
+
+        Vector2 force = new Vector2(xForce, 0);
+
+        rb2d.AddForce(force);
     }
 }

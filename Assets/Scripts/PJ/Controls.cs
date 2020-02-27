@@ -57,6 +57,14 @@ public class @Controls : IInputActionCollection, IDisposable
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": ""Press(behavior=1)""
+                },
+                {
+                    ""name"": ""Shoot"",
+                    ""type"": ""Button"",
+                    ""id"": ""b5b8852e-1201-4966-833f-590e55a8c29a"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": ""Press(behavior=1)""
                 }
             ],
             ""bindings"": [
@@ -224,6 +232,17 @@ public class @Controls : IInputActionCollection, IDisposable
                     ""action"": ""CrounchRelease"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a692bbde-fd83-4895-80ed-d20ef6041718"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Shoot"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -308,6 +327,7 @@ public class @Controls : IInputActionCollection, IDisposable
         m_Player_JumpRelease = m_Player.FindAction("JumpRelease", throwIfNotFound: true);
         m_Player_Crounch = m_Player.FindAction("Crounch", throwIfNotFound: true);
         m_Player_CrounchRelease = m_Player.FindAction("CrounchRelease", throwIfNotFound: true);
+        m_Player_Shoot = m_Player.FindAction("Shoot", throwIfNotFound: true);
         // Menu
         m_Menu = asset.FindActionMap("Menu", throwIfNotFound: true);
         m_Menu_MenuSelection = m_Menu.FindAction("Menu Selection", throwIfNotFound: true);
@@ -365,6 +385,7 @@ public class @Controls : IInputActionCollection, IDisposable
     private readonly InputAction m_Player_JumpRelease;
     private readonly InputAction m_Player_Crounch;
     private readonly InputAction m_Player_CrounchRelease;
+    private readonly InputAction m_Player_Shoot;
     public struct PlayerActions
     {
         private @Controls m_Wrapper;
@@ -374,6 +395,7 @@ public class @Controls : IInputActionCollection, IDisposable
         public InputAction @JumpRelease => m_Wrapper.m_Player_JumpRelease;
         public InputAction @Crounch => m_Wrapper.m_Player_Crounch;
         public InputAction @CrounchRelease => m_Wrapper.m_Player_CrounchRelease;
+        public InputAction @Shoot => m_Wrapper.m_Player_Shoot;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -398,6 +420,9 @@ public class @Controls : IInputActionCollection, IDisposable
                 @CrounchRelease.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCrounchRelease;
                 @CrounchRelease.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCrounchRelease;
                 @CrounchRelease.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCrounchRelease;
+                @Shoot.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnShoot;
+                @Shoot.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnShoot;
+                @Shoot.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnShoot;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -417,6 +442,9 @@ public class @Controls : IInputActionCollection, IDisposable
                 @CrounchRelease.started += instance.OnCrounchRelease;
                 @CrounchRelease.performed += instance.OnCrounchRelease;
                 @CrounchRelease.canceled += instance.OnCrounchRelease;
+                @Shoot.started += instance.OnShoot;
+                @Shoot.performed += instance.OnShoot;
+                @Shoot.canceled += instance.OnShoot;
             }
         }
     }
@@ -461,6 +489,7 @@ public class @Controls : IInputActionCollection, IDisposable
         void OnJumpRelease(InputAction.CallbackContext context);
         void OnCrounch(InputAction.CallbackContext context);
         void OnCrounchRelease(InputAction.CallbackContext context);
+        void OnShoot(InputAction.CallbackContext context);
     }
     public interface IMenuActions
     {
