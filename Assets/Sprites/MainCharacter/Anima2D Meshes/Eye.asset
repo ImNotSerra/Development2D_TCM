@@ -162,13 +162,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c10c0be6d28fe4d539c4a39822fe301c, type: 3}
+  m_Script: {fileID: 11500000, guid: 438dc15bf3cd3a447943d1d1b7a83c67, type: 3}
   m_Name: Eye
   m_EditorClassIdentifier: 
-  m_ApiVersion: 4
-  m_Sprite: {fileID: 21300000, guid: c0ef14e40722df549bf354bc58ad32c6, type: 3}
-  m_SharedMesh: {fileID: 126753360377675584}
-  m_SharedMaterials: []
 --- !u!43 &126753360377675584
 Mesh:
   m_ObjectHideFlags: 1

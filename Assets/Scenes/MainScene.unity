@@ -615,7 +615,7 @@ MonoBehaviour:
   m_SpriteMesh: {fileID: 11400000, guid: fdb05a1a8465a444dbe23b3d501b0d6e, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 3}
   m_SortingLayerID: 0
   m_SortingOrder: 1
   m_BoneTransforms:
@@ -6384,7 +6384,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1027222598}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.137, y: 2.327, z: 0}
+  m_LocalPosition: {x: -5.137, y: 2.327, z: -2.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2140750686}
@@ -8129,7 +8129,7 @@ MonoBehaviour:
   m_SpriteMesh: {fileID: 11400000, guid: b9b34de3066f5eb4fbb619668aa67190, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 3}
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_BoneTransforms:
@@ -20753,7 +20753,7 @@ MonoBehaviour:
   m_SpriteMesh: {fileID: 11400000, guid: cc5c82383e2e9af4e87820df7df6d494, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 3}
   m_SortingLayerID: 0
   m_SortingOrder: 2
   m_BoneTransforms:
@@ -21482,7 +21482,7 @@ MonoBehaviour:
   m_SpriteMesh: {fileID: 11400000, guid: 2ff9b74716e831f4bb7c1206ed521cfb, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 3}
   m_SortingLayerID: 0
   m_SortingOrder: 2
   m_BoneTransforms:
@@ -21757,7 +21757,7 @@ MonoBehaviour:
   m_SpriteMesh: {fileID: 11400000, guid: b9b34de3066f5eb4fbb619668aa67190, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 3}
   m_SortingLayerID: 0
   m_SortingOrder: 1
   m_BoneTransforms:
@@ -22418,7 +22418,7 @@ MonoBehaviour:
   m_SpriteMesh: {fileID: 11400000, guid: ba5a0a5a377362e45b2d745355231e5f, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 3}
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_BoneTransforms:

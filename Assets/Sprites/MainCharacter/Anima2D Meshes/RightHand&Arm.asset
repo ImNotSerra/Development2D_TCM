@@ -418,10 +418,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c10c0be6d28fe4d539c4a39822fe301c, type: 3}
+  m_Script: {fileID: 11500000, guid: 438dc15bf3cd3a447943d1d1b7a83c67, type: 3}
   m_Name: RightHand&Arm
   m_EditorClassIdentifier: 
-  m_ApiVersion: 4
-  m_Sprite: {fileID: 21300000, guid: 5d67b65f202a0624281778317d9e2379, type: 3}
-  m_SharedMesh: {fileID: -1591835110707588326}
-  m_SharedMaterials: []
