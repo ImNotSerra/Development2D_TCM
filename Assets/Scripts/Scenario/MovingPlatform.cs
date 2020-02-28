@@ -16,7 +16,7 @@ public class MovingPlatform : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    /*void Update()
     {
         Move();
     }
@@ -35,5 +35,5 @@ public class MovingPlatform : MonoBehaviour
     private float GetFraction()
     {
 
-    }
+    }*/
 }
