@@ -15,7 +15,7 @@ public class PlayerMov : MonoBehaviour
         rb2d = GetComponent<Rigidbody2D>();
     }
 
-    void Update()
+    private void Update()
     {
         transform.Translate(inputSpeed * Time.deltaTime * movementSpeed);
     }

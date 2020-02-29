@@ -21,8 +21,8 @@ public class PlayerJump : MonoBehaviour
     [SerializeField]
     private Transform checkGround;
 
-    private bool isGrounded;
-    public bool IsGrounded => isGrounded;
+    public bool isGrounded;
+    //public bool IsGrounded => isGrounded;
 
     private float checkRadius = 0.1f;
 

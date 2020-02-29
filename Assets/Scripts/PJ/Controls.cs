@@ -57,6 +57,14 @@ public class @Controls : IInputActionCollection, IDisposable
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": ""Press(behavior=1)""
+                },
+                {
+                    ""name"": ""AtaqueFisico"",
+                    ""type"": ""Button"",
+                    ""id"": ""53788981-41c8-4ec5-ae12-538d5321235a"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": ""Press(behavior=1)""
                 }
             ],
             ""bindings"": [
@@ -224,6 +232,17 @@ public class @Controls : IInputActionCollection, IDisposable
                     ""action"": ""CrounchRelease"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6ece50f6-3bdd-4ee2-ae5b-fa299bb18087"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""AtaqueFisico"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -308,6 +327,7 @@ public class @Controls : IInputActionCollection, IDisposable
         m_Player_JumpRelease = m_Player.FindAction("JumpRelease", throwIfNotFound: true);
         m_Player_Crounch = m_Player.FindAction("Crounch", throwIfNotFound: true);
         m_Player_CrounchRelease = m_Player.FindAction("CrounchRelease", throwIfNotFound: true);
+        m_Player_AtaqueFisico = m_Player.FindAction("AtaqueFisico", throwIfNotFound: true);
         // Menu
         m_Menu = asset.FindActionMap("Menu", throwIfNotFound: true);
         m_Menu_MenuSelection = m_Menu.FindAction("Menu Selection", throwIfNotFound: true);
@@ -365,6 +385,7 @@ public class @Controls : IInputActionCollection, IDisposable
     private readonly InputAction m_Player_JumpRelease;
     private readonly InputAction m_Player_Crounch;
     private readonly InputAction m_Player_CrounchRelease;
+    private readonly InputAction m_Player_AtaqueFisico;
     public struct PlayerActions
     {
         private @Controls m_Wrapper;
@@ -374,6 +395,7 @@ public class @Controls : IInputActionCollection, IDisposable
         public InputAction @JumpRelease => m_Wrapper.m_Player_JumpRelease;
         public InputAction @Crounch => m_Wrapper.m_Player_Crounch;
         public InputAction @CrounchRelease => m_Wrapper.m_Player_CrounchRelease;
+        public InputAction @AtaqueFisico => m_Wrapper.m_Player_AtaqueFisico;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -398,6 +420,9 @@ public class @Controls : IInputActionCollection, IDisposable
                 @CrounchRelease.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCrounchRelease;
                 @CrounchRelease.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCrounchRelease;
                 @CrounchRelease.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCrounchRelease;
+                @AtaqueFisico.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAtaqueFisico;
+                @AtaqueFisico.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAtaqueFisico;
+                @AtaqueFisico.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAtaqueFisico;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -417,6 +442,9 @@ public class @Controls : IInputActionCollection, IDisposable
                 @CrounchRelease.started += instance.OnCrounchRelease;
                 @CrounchRelease.performed += instance.OnCrounchRelease;
                 @CrounchRelease.canceled += instance.OnCrounchRelease;
+                @AtaqueFisico.started += instance.OnAtaqueFisico;
+                @AtaqueFisico.performed += instance.OnAtaqueFisico;
+                @AtaqueFisico.canceled += instance.OnAtaqueFisico;
             }
         }
     }
@@ -461,6 +489,7 @@ public class @Controls : IInputActionCollection, IDisposable
         void OnJumpRelease(InputAction.CallbackContext context);
         void OnCrounch(InputAction.CallbackContext context);
         void OnCrounchRelease(InputAction.CallbackContext context);
+        void OnAtaqueFisico(InputAction.CallbackContext context);
     }
     public interface IMenuActions
     {
