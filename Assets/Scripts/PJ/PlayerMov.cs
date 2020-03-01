@@ -18,7 +18,6 @@ public class PlayerMov : MonoBehaviour
     private void Update()
     {
         transform.Translate(inputSpeed * Time.deltaTime * movementSpeed);
-        print(inputSpeed);
     }
 
     public void OnMove(InputValue Value)
