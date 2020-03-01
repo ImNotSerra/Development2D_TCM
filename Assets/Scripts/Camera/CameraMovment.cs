@@ -23,7 +23,7 @@ public class CameraMovment : MonoBehaviour
     }
     private void LateUpdate()
     {
-        Debug.Log(targets.Count);
+       // Debug.Log(targets.Count);
         if (targets.Count == 0)
             return;
 
